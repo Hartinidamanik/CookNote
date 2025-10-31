@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CookNote</string>
+
+    <!-- Login & Register -->
+    <string name="login">Login</string>
+    <string name="register">Daftar</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Konfirmasi Password</string>
+
+    <!-- Main -->
+    <string name="my_recipes">Resep Saya</string>
+    <string name="add_recipe">Tambah Resep</string>
+    <string name="search">Cari</string>
+    <string name="logout">Keluar</string>
+
+    <!-- Recipe -->
+    <string name="recipe_title">Judul Resep</string>
+    <string name="ingredients">Bahan-bahan</string>
+    <string name="steps">Langkah-langkah</string>
+    <string name="save">Simpan</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Hapus</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+
+    <!-- Messages -->
+    <string name="empty_recipe">Belum ada resep.\nTambahkan resep pertamamu!</string>
+    <string name="delete_confirmation">Apakah Anda yakin ingin menghapus resep ini?</string>
+    <string name="logout_confirmation">Apakah Anda yakin ingin keluar?</string>
+
+    <string name="success_add">Resep berhasil ditambahkan</string>
+    <string name="success_update">Resep berhasil diupdate</string>
+    <string name="success_delete">Resep berhasil dihapus</string>
+
+    <string name="error_add">Gagal menambahkan resep</string>
+    <string name="error_update">Gagal mengupdate resep</string>
+    <string name="error_delete">Gagal menghapus resep</string>
+</resources>
