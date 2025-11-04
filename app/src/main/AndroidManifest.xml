@@ -3,16 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.cooknote">
 
-    <!-- Permissions -->
+    <!-- === PERMISSIONS === -->
+    <!-- Kamera -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
+
+    <!-- Akses media untuk Android 13 (API 33) ke atas -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
+    <!-- Akses penyimpanan untuk Android 12 (API 32) ke bawah -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Izin tulis ke penyimpanan (dibatasi di Android 10+, tapi tetap aman untuk API lama) -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Kamera opsional (tidak wajib ada di perangkat) -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <!-- === APPLICATION === -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,9 +35,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CookNote"
-        tools:targetApi="31">
+        tools:targetApi="35">
 
-        <!-- LoginActivity sebagai launcher -->
+        <!-- === LOGIN ACTIVITY (Launcher) === -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -35,20 +48,20 @@
             </intent-filter>
         </activity>
 
-        <!-- RegisterActivity -->
+        <!-- === REGISTER ACTIVITY === -->
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:parentActivityName=".LoginActivity" />
 
-        <!-- MainActivity -->
+        <!-- === MAIN ACTIVITY === -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
 
-        <!-- AddEditRecipeActivity -->
+        <!-- === ADD / EDIT RECIPE ACTIVITY === -->
         <activity
             android:name=".AddEditRecipeActivity"
             android:exported="false"
@@ -56,17 +69,17 @@
             android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".MainActivity" />
 
-        <!-- RecipeDetailActivity -->
+        <!-- === RECIPE DETAIL ACTIVITY === -->
         <activity
             android:name=".RecipeDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" />
 
-        <!-- FileProvider untuk kamera -->
+        <!-- === FILE PROVIDER UNTUK KAMERA === -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.cooknote.fileprovider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
